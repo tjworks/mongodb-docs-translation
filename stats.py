@@ -110,6 +110,9 @@ contents = contents.replace("<!--TranslationList-->", str)
 file=open(script_dir+"/index-generated.html", "w")
 file.write(contents)
 
+file=open("./build/master/html-zh/index.html", "w")
+file.write(contents)
+
     # http://localhost:8000/core/sharded-cluster-high-availability.html
 # data structure:
 sx="""
