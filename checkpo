@@ -1,0 +1,19 @@
+#! /bin/sh
+commits=$1
+if [ "$1" eq ""]
+then
+	commits=5
+fi
+
+echo $commits
+
+lines=`git status | grep modified: | grep .po | awk '{print $2}'`
+lines=`git log --name-status -$commits locale/ | grep locale | grep .po | awk '{print $2}'`
+#echo $lines
+
+for line in $lines; do 
+	echo "========== $line ============"
+	~/work/translation/po-file-checker/build/lib/po_file_checker/check.py $line
+done
+
+
