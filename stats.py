@@ -19,6 +19,10 @@ for line in output.splitlines():
         cur["email"] = words[1]
         cur["date"] =  words[2]
         cur["time"] = words[3]
+        if not "@" in words[1] and "@" in words[2]:
+            cur["email"] = words[2]
+            cur["date"] = words[3]
+            cur["time"] = words[4]
         #print cur["name"]
     elif ( line == ""): 
         cur = {}
@@ -104,7 +108,7 @@ contents = contents.replace("<!--TranslationProgress-->", str)
 print "##########  Most Recent Translations ##############"
 
 str="<table><tr><th width='300'>Page</th><th width='200'>Translator</th><th>Date</th></tr>"
-count = 10
+count = 20
 for aname in sorted(articles, key=lambda key: articles[key]['last_updated'], reverse=True):    
     if(count == 0):
         break
