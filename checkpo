@@ -2,7 +2,7 @@
 import sys,traceback,os,re,copy
 from po_file_checker.base import check_files
 
-commits = 5
+commits = "5"
 if(len(sys.argv)>1):
     commits = sys.argv[1]
 
@@ -36,11 +36,11 @@ for line in output.splitlines():
         for el in stack.splitlines():
             if("Syntax error in po file" in el):
                 el = pat.sub("<a href='https://github.com/tjworks/docs/blob/master/\g<1>'>\g<1></a>", el)
-                errors= errors + el 
+                if(el not in errors):
+                    errors= errors + el +"\n"
         print("##########")
 
-    if missing:        
-        errors =  "\n".join(missing)
+    #if missing:        errors =  "\n".join(missing)
 
 #locale/zh/LC_MESSAGES/index.po        
 file=open("po-errors", "w")
