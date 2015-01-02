@@ -2837,6 +2837,8 @@
 <p>如果你时间不多但是又想为翻译工作出点力，你不用一定加入翻译工作组。 你可以直接到相关页面并点击右上角的“直接翻译或纠正此页面“ 超链接来做一些即时翻译或者校验工作。</p>
 
 <div class="section" id="id1">
+<h2>PO文件错误监测</h2>
+<!--ErrorList-->
 <h2>最新10篇更新的文档:<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>请关注微博账号 <a class="reference external" href="http://weibo.com/mongoing">mongoing</a> 来获得最新翻译文档的通知。</p>
 <!--MostRecentTen-->

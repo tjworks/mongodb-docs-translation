@@ -136,6 +136,11 @@ for aname in sorted(articles, key=lambda key: articles[key]['main_author']):
 str+="</table>"
 contents = contents.replace("<!--TranslationList-->", str)
 
+error_file  = open( "po-errors")
+errors = error_file.read()
+#if(not errors):errors = "N/A"
+contents = contents.replace("<!--ErrorList-->", errors)    
+
 file=open(script_dir+"/index-generated.html", "w")
 file.write(contents)
 
